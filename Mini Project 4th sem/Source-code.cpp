@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int arr[100][100];
+
+
 bool isNumber(string s)
 {
     bool result = true;
@@ -12,21 +15,30 @@ bool isNumber(string s)
     return result;
 }
 
-int main()
+void input()
 {
-    string h;
-    int n;
-    cin >> n;
+    string arrayElements;
+    string n;
+    int range;
     try
     {
-        while (n)
+        cin >> n;
+        if (!isNumber(n))
+            throw n;
+        if (atoi(n.c_str()) < 0 || atoi(n.c_str()) > 100)
+            throw atoi(n.c_str());
+        range = atoi(n.c_str());
+        for (int i = 0; i < range; i++)
         {
-            cin >> h;
-            n--;
-            if (!isNumber(h))
-                throw h;
-            if (atoi(h.c_str()) < 0 || atoi(h.c_str()) > 2)
-                throw atoi(h.c_str());
+            for(int j = 0; j < range; j++)
+            {
+                cin >> arrayElements;
+                if (!isNumber(arrayElements))
+                    throw arrayElements;
+                if (atoi(arrayElements.c_str()) < 0 || atoi(arrayElements.c_str()) > 2)
+                    throw atoi(arrayElements.c_str());
+                arr[i][j] = atoi(arrayElements.c_str());
+            }
         }
     }
     catch(string str)
@@ -37,4 +49,10 @@ int main()
     {
         cout << num << " is out of bounds" << endl;
     }
+}
+
+//Driver Code
+int main()
+{
+    input();
 }
