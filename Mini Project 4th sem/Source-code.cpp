@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
+#include <conio.h>
 using namespace std;
 
-int arr[100][100], range;
+int arr[100][100], range, error = 0;
 
 //Function to check if the input is valid
 bool isNumber(string s)
@@ -23,6 +24,7 @@ void Input()
     try
     {
         cin >> n;
+        cout << endl;
 
         //If input is not numeric
         if (!isNumber(n))
@@ -52,18 +54,23 @@ void Input()
                 arr[i][j] = atoi(arrayElements.c_str());
             }
         }
+        cout << endl;
     }
 
     //Input is not numeric
     catch(string str)
     {
-        cout << str << " is an Invalid Entry" << endl;
+        cin.ignore();
+        error = 1;
+        cout << endl << str << " is an Invalid Entry" << endl;
     }
 
     //Input is out of bounds
     catch(int num)
     {
-        cout << num << " is out of bounds" << endl;
+        cin.ignore();
+        error = 1;
+        cout << endl << num << " is out of bounds" << endl;
     }
 }
 
@@ -163,6 +170,23 @@ bool twoPath()
 int main()
 {
     Input();
+    if (1 == error)
+    {
+        cin.ignore();
+        cout << endl << "Terminated due to error" << endl;
+        cout << "Enter 1 to input again" << endl;
+        int inputAgain;
+        cin >> inputAgain;
+        cout << endl;
+        if (inputAgain == 1)
+        {
+            error = 0;
+            Input();
+        }
+        else
+            return 0;
+    }
+    cout << "\t\t\t\t\t______________OUTPUT_____________" << endl << endl << endl;
     if (onePath() && twoPath())
     {
         cout << "Ambiguous" << endl;
@@ -179,4 +203,7 @@ int main()
     {
         cout << "0" << endl;
     }
+    cout << endl << "Press any key to exit";
+    getch();
+    return 0;
 }
