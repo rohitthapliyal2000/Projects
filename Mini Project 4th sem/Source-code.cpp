@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+#include <stdio.h>
 #include <conio.h>
+
 using namespace std;
 
 int arr[100][100], range, error = 0;
@@ -60,7 +62,7 @@ void Input()
     //Input is not numeric
     catch(string str)
     {
-        cin.ignore();
+        //cin.ignore();
         error = 1;
         cout << endl << str << " is an Invalid Entry" << endl;
     }
@@ -68,7 +70,7 @@ void Input()
     //Input is out of bounds
     catch(int num)
     {
-        cin.ignore();
+        //cin.ignore();
         error = 1;
         cout << endl << num << " is out of bounds" << endl;
     }
@@ -170,9 +172,12 @@ bool twoPath()
 int main()
 {
     Input();
-    if (1 == error)
+    while (1 == error)
     {
-        cin.ignore();
+        //for (int index = 0; index < range; index++)
+            //cin.ignore();
+        cin.clear();
+        fflush(stdin);
         cout << endl << "Terminated due to error" << endl;
         cout << "Enter 1 to input again" << endl;
         int inputAgain;
