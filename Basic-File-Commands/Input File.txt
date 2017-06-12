@@ -1,0 +1,12 @@
+11
+crt phonebook
+crt phonebook
+crt phonebook
+crt todo
+crt phonebook
+del phonebook
+del phonebook(2)
+crt phonebook
+crt phonebook
+crt phonebook
+rnm phonebook(2) todo

@@ -1,0 +1,20 @@
+# crt file_name 
+
+1. Create a file named 'file_name'.
+2. If 'file_name' is already in use, then append (x) to it where 'x' is the lowest positive integer such that the file
+   doesn't already exist. For example, 'crt a' creates file 'a(2)' if 'a' and 'a(1)' already exist.
+3. Print '+ new_file' on a new line, where 'new_file' is the new file's name.
+
+# del file_name 
+
+1. Delete the file named 'file_name'.
+2. Print '- file_name' on a new line, where 'file_name' is the deleted file's name.
+
+# rnm file_name1 file_name2
+
+1. Find the file called 'file_name1' and change the name to 'file_name2' (Follow point 2 of 'crt' command in case
+   of conflict). For the purpose of simplification, you can think this operation as deleting the first file and
+   creating the second file.
+2. Print 'r file_name1 -> new_file' on a new line, where 'new_file' is the new file's name.
+
+Given 'q' commands, execute each command in order.
