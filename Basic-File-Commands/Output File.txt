@@ -1,0 +1,11 @@
++ phonebook
++ phonebook(1)
++ phonebook(2)
++ todo
++ phonebook(3)
+- phonebook
+- phonebook(2)
++ phonebook
++ phonebook(2)
++ phonebook(4)
+r phonebook(2) -> todo(1)
